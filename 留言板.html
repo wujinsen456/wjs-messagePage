@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>留言板</title>
+</head>
+<style>
+    .box1{
+        width: 500px;
+        height: 600px;
+        border: 1px solid #0c0c0c;
+        margin: 0 auto;
+        margin-bottom:  100px;
+    }
+    .up{
+        width: 100%;
+        height: auto;
+        padding-top: 100px;
+        box-sizing: border-box;
+    }
+    .down{
+        width: 100%;
+        height: 100px;
+        border-top: 1px solid #0c0c0c;
+    }
+    .down input{
+        width: 100%;
+        height: 30px;
+        outline: none;
+        border: none;
+        font-size: 16px;
+        /*background: red;*/
+    }
+    .box1 button{
+        width: 80px;
+        height: 30px;
+        margin-top: 50px;
+        margin-left: 210px;
+
+    }
+</style>
+<body>
+    <div class="box1">
+        <div class="up"></div>
+        <div class="down">
+            <input type="text">
+        </div>
+        <button>提交</button>
+
+    </div>
+</body>
+</html>
+<script>
+    /////////输入文字 点击提交  显示在页面中  留言板///////////
+    let up=document.querySelector(".up");
+    let button=document.querySelector("button");
+    let input=document.querySelector("input");
+    button.onclick=function () {
+        let result=document.createElement("div");
+        result.style=`width:70%;
+        margin:10px auto;height:30px;line-height=30px;text-align:center;
+        font-size:18px;border-bottom:1px solid red;`;
+        result.innerText=input.value;
+        input.value="";
+        up.appendChild(result);
+    }
+</script>
